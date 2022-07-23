@@ -22,12 +22,14 @@ const config: PlaywrightTestConfig = {
 
   // Run your local dev server before starting the tests:
   // https://playwright.dev/docs/test-advanced#launching-a-development-web-server-during-the-tests
-  // webServer: {
-  //   command: "npm run dev",
-  //   url: baseURL,
-  //   timeout: 120 * 1000,
-  //   reuseExistingServer: !process.env.CI,
-  // },
+  webServer: {
+    command: "npm run dev",
+    url: baseURL,
+    timeout: 30 * 1000,
+    reuseExistingServer: !process.env.CI,
+  },
+
+  reporter: process.env.CI ? [["html", { open: "never" }]] : "list",
 
   use: {
     // Use baseURL so to make navigations relative.
