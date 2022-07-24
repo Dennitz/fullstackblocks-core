@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import { NextPage } from "next";
 import { LoadingSpinnerPage } from "@/components/loading-spinner";
-import { Header } from "@/components/header";
+import { Header } from "@/components/examples/auth/header";
 import { useRouter } from "next/router";
 
 const ClientSideProtected: NextPage = () => {

@@ -1,5 +1,5 @@
 import { NextPage, GetServerSideProps } from "next";
-import { Header } from "@/components/header";
+import { Header } from "@/components/examples/auth/header";
 import { unstable_getServerSession, Session } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 

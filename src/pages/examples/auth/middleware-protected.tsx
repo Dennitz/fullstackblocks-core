@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { Header } from "@/components/header";
+import { Header } from "@/components/examples/auth/header";
 import { useSession } from "next-auth/react";
 
 const MiddlewareProtected: NextPage = () => {
