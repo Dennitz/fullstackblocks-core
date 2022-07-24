@@ -25,7 +25,7 @@ const MiddlewareProtected: NextPage = () => {
             </div>
           </dl>
         </div>
-        <div>
+        <div className="max-w-3xl">
           <p className="mb-3">
             On this page, authentication is ensured through middleware running at the edge (see{" "}
             <code>src/middleware.ts</code>).

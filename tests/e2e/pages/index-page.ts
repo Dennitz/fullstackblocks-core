@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { BasePage } from "./base-page";
+import { BasePage } from "../helpers/base-page";
 
 export class IndexPage extends BasePage {
   static readonly path: string = "/";
@@ -8,9 +8,5 @@ export class IndexPage extends BasePage {
   constructor(page: Page, isMobile: boolean = false) {
     super(page, IndexPage.path);
     this.isMobile = isMobile;
-  }
-
-  async clickSignIn(): Promise<void> {
-    await this.page.click("text= Sign in");
   }
 }

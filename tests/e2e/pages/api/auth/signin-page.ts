@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { BasePage } from "../../base-page";
+import { BasePage } from "../../../helpers/base-page";
 import { getSignInMagicLinkFromEmail } from "@e2e/helpers/email";
 
 export class SigninPage extends BasePage {
