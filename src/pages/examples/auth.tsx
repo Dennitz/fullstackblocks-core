@@ -45,7 +45,7 @@ const Auth: NextPage = () => {
             </li>
           </ul>
           <p className="mb-3">
-            For an example of how to protect API routes, see <code>src/pages/api/restricted.ts</code>
+            For an example of how to protect API routes, see <code>src/pages/api/examples/restricted.ts</code>
           </p>
         </div>
       </main>

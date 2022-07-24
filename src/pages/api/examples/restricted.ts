@@ -2,7 +2,7 @@
 
 import { NextApiHandler } from "next";
 import { unstable_getServerSession as getServerSession } from "next-auth";
-import { authOptions as nextAuthOptions } from "./auth/[...nextauth]";
+import { authOptions as nextAuthOptions } from "../auth/[...nextauth]";
 
 const restricted: NextApiHandler = async (req, res) => {
   const session = await getServerSession(req, res, nextAuthOptions);
