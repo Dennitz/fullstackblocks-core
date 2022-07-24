@@ -55,8 +55,8 @@ const Index: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex h-full w-screen flex-col items-center justify-center overflow-y-scroll p-4">
-        <h1 className="text-[3rem] font-extrabold text-slate-700 md:text-[5rem] lg:text-[5rem]">
+      <div className="flex w-screen flex-col items-center justify-center p-4">
+        <h1 className="text-5xl font-extrabold text-slate-700 md:text-7xl lg:text-7xl">
           Create <span className="text-purple-300">T3</span> App
         </h1>
         <p className="text-2xl text-slate-700">This stack uses</p>
