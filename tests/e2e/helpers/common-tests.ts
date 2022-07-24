@@ -10,7 +10,7 @@ import escapeRegExp from "lodash/escapeRegExp";
  * of `baseURL + pagePath` (absolute path)
  */
 export function testRedirectIfNotSignedIn(pagePath: string): void {
-  test("should redirect to sign-in page if not signed in", async ({ page, baseURL }) => {
+  test(`${pagePath} should redirect to sign-in page if not signed in`, async ({ page, baseURL }) => {
     await page.goto(pagePath);
 
     const pathWithRelativeCallback = escapeRegExp(

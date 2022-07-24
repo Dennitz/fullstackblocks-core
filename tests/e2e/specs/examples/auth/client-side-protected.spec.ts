@@ -1,7 +1,7 @@
-import { test, expect } from "../test";
+import { test, expect } from "@e2e/test";
 import { testRedirectIfNotSignedIn } from "@e2e/helpers/common-tests";
 
-const pagePath = "/client-side-protected";
+const pagePath = "/examples/auth/client-side-protected";
 
 testRedirectIfNotSignedIn(pagePath);
 

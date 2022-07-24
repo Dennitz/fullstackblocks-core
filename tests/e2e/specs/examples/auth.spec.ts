@@ -1,6 +1,6 @@
 import { test, expect, Page } from "@playwright/test";
-import { SigninPage } from "../pages/api/auth/signin-page";
-import { BasePage } from "../pages/base-page";
+import { SigninPage } from "@e2e/pages/api/auth/signin-page";
+import { BasePage } from "@e2e/pages/base-page";
 import { faker } from "@faker-js/faker";
 
 test("should not allow access to protected page without sign-in", async ({ page }) => {
@@ -59,7 +59,7 @@ test("falls back to baseUrl if callbackURL is for different hostname", async ({ 
 
 /** An arbitrary page that requires authentication. */
 class ProtectedPage extends BasePage {
-  static readonly path: string = "/client-side-protected";
+  static readonly path: string = "/examples/auth/client-side-protected";
 
   constructor(page: Page) {
     super(page, ProtectedPage.path);
