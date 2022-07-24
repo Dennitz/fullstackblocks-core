@@ -65,6 +65,7 @@ const Index: NextPage = () => {
             <div
               key={details.title}
               className="flex h-full w-full cursor-pointer flex-col items-center justify-center rounded border-2 border-slate-500 p-6 text-center shadow-xl duration-500 hover:scale-105"
+              data-test-id="stack-component"
             >
               <h2 className="text-lg text-slate-700">{details.title}</h2>
               <p className="text-sm text-slate-600">{details.description}</p>
