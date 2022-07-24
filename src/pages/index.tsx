@@ -3,6 +3,41 @@ import Head from "next/head";
 import { trpc } from "@/utils/trpc";
 import { Header } from "@/components/header";
 import { useSession } from "next-auth/react";
+import React from "react";
+
+const stackComponents = [
+  {
+    title: "Next.js",
+    description: "The React framework for production",
+    documentationUrl: "https://nextjs.org/",
+  },
+  {
+    title: "TypeScript",
+    description:
+      "Strongly typed programming language that builds on JavaScript, giving you better tooling at any scale",
+    documentationUrl: "https://www.typescriptlang.org/",
+  },
+  {
+    title: "TailwindCSS",
+    description: "Rapidly build modern websites without ever leaving your HTML",
+    documentationUrl: "https://tailwindcss.com/",
+  },
+  {
+    title: "tRPC",
+    description: "End-to-end typesafe APIs made easy",
+    documentationUrl: "https://trpc.io/",
+  },
+  {
+    title: "NextAuth.js",
+    description: "Authentication built for Next.js",
+    documentationUrl: "https://next-auth.js.org/",
+  },
+  {
+    title: "Playwright",
+    description: "Fast and reliable end-to-end testing for modern web apps",
+    documentationUrl: "https://playwright.dev/",
+  },
+];
 
 const Index: NextPage = () => {
   const hello = trpc.useQuery(["example.hello"]);
@@ -24,59 +59,23 @@ const Index: NextPage = () => {
         </h1>
         <p className="text-2xl text-slate-700">This stack uses</p>
         <div className="mt-3 grid w-full grid-cols-1 grid-rows-3 items-center justify-center gap-3 pt-3 md:w-full md:grid-cols-2 md:grid-rows-2 lg:w-2/3 lg:grid-cols-2 lg:grid-rows-2">
-          <div className="flex h-full w-full cursor-pointer flex-col items-center justify-center rounded border-2 border-slate-500 p-6 text-center shadow-xl duration-500 hover:scale-105">
-            <h2 className="text-lg text-slate-700">NextJS</h2>
-            <p className="text-sm text-slate-600">The React framework for production</p>
-            <a
-              className="mt-3 cursor-pointer text-sm text-violet-500 underline decoration-dotted underline-offset-2"
-              href="https://nextjs.org/"
-              target="_blank"
-              rel="noreferrer"
+          {stackComponents.map((details) => (
+            <div
+              key={details.title}
+              className="flex h-full w-full cursor-pointer flex-col items-center justify-center rounded border-2 border-slate-500 p-6 text-center shadow-xl duration-500 hover:scale-105"
             >
-              Documentation
-            </a>
-          </div>
-          <div className="flex h-full w-full cursor-pointer flex-col items-center justify-center rounded border-2 border-slate-500 p-6 text-center shadow-xl duration-500 hover:scale-105">
-            <h2 className="text-lg text-slate-700">TypeScript</h2>
-            <p className="text-sm text-slate-600">
-              Strongly typed programming language that builds on JavaScript, giving you better tooling at any
-              scale
-            </p>
-            <a
-              className="mt-3 cursor-pointer text-sm text-violet-500 underline decoration-dotted underline-offset-2"
-              href="https://www.typescriptlang.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Documentation
-            </a>
-          </div>
-          <div className="flex h-full w-full cursor-pointer flex-col items-center justify-center rounded border-2 border-slate-500 p-6 text-center shadow-xl duration-500 hover:scale-105">
-            <h2 className="text-lg text-slate-700">TailwindCSS</h2>
-            <p className="text-sm text-slate-600">
-              Rapidly build modern websites without ever leaving your HTML
-            </p>
-            <a
-              className="mt-3 cursor-pointer text-sm text-violet-500 underline decoration-dotted underline-offset-2"
-              href="https://tailwindcss.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Documentation
-            </a>
-          </div>
-          <div className="flex h-full w-full cursor-pointer flex-col items-center justify-center rounded border-2 border-slate-500 p-6 text-center shadow-xl duration-500 hover:scale-105">
-            <h2 className="text-lg text-slate-700">tRPC</h2>
-            <p className="text-sm text-slate-600">End-to-end typesafe APIs made easy</p>
-            <a
-              className="mt-3 cursor-pointer text-sm text-violet-500 underline decoration-dotted underline-offset-2"
-              href="https://trpc.io/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Documentation
-            </a>
-          </div>
+              <h2 className="text-lg text-slate-700">{details.title}</h2>
+              <p className="text-sm text-slate-600">{details.description}</p>
+              <a
+                className="mt-3 cursor-pointer text-sm text-violet-500 underline decoration-dotted underline-offset-2"
+                href={details.documentationUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Documentation
+              </a>
+            </div>
+          ))}
         </div>
         <div className="flex w-full items-center justify-center pt-6 text-2xl text-blue-500">
           {hello.data ? <p>{hello.data.greeting}</p> : <p>Loading..</p>}
