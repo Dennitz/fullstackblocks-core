@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import { NextPage } from "next";
 import { LoadingSpinnerPage } from "@/components/loading-spinner";
-import { Header } from "@/components/examples/auth/header";
+import { AuthHeader } from "@/components/examples/auth/auth-header";
 import { useRouter } from "next/router";
 
 const ClientSideProtected: NextPage = () => {
@@ -22,7 +22,7 @@ const ClientSideProtected: NextPage = () => {
   // Otherwise, successfully authenticated. Show the private page.
   return (
     <div>
-      <Header authenticated />
+      <AuthHeader authenticated />
       <main className="mx-auto max-w-7xl py-6 px-10">
         <h1 className="mb-10 text-3xl font-extrabold text-slate-800">Client-side rendered protected page</h1>
         <div className="max-w-3xl rounded-xl bg-white shadow-xl">

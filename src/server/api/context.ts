@@ -47,7 +47,7 @@ export function createRouter() {
  * export const authRouter = createRouter()
  *   .query("getPublicMessage", {
  *      resolve() {
- *        return "You may or may not be logged in. Everyone can see this public message.";
+ *        return "This is a public message, no authentication required.";
  *      },
  *    })
  *   .middleware(protect)

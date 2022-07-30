@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { Header } from "@/components/examples/auth/header";
+import { AuthHeader } from "@/components/examples/auth/auth-header";
 import { useSession } from "next-auth/react";
 import React from "react";
 
@@ -7,7 +7,7 @@ const Auth: NextPage = () => {
   const { status: authStatus } = useSession();
   return (
     <div>
-      <Header authenticated={authStatus === "authenticated"} />
+      <AuthHeader authenticated={authStatus === "authenticated"} />
       <main className="mx-auto max-w-7xl py-6 px-10">
         <h1 className="mb-10 text-3xl font-extrabold text-slate-800">Examples - Auth</h1>
         <div className="max-w-3xl">

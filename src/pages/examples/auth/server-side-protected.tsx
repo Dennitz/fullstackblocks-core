@@ -1,5 +1,5 @@
 import { NextPage, GetServerSideProps } from "next";
-import { Header } from "@/components/examples/auth/header";
+import { AuthHeader } from "@/components/examples/auth/auth-header";
 import { unstable_getServerSession, Session } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 const ServerSideProtected: NextPage<{ session: Session }> = (props) => {
   return (
     <div>
-      <Header authenticated />
+      <AuthHeader authenticated />
       <main className="mx-auto max-w-7xl py-6 px-10">
         <h1 className="mb-10 text-3xl font-extrabold text-slate-800">Server-side rendered protected page</h1>
         <div className="max-w-3xl rounded-xl bg-white shadow-xl">

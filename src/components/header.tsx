@@ -2,19 +2,16 @@ import React from "react";
 import Link from "next/link";
 import { classNames } from "@/utils/class-names";
 
-export const Header: React.FC<{ authenticated?: boolean }> = (props = { authenticated: false }) => (
-  <nav className="mx-auto flex max-w-7xl py-6 px-10 flex-col lg:flex-row space-y-5 lg:space-y-0">
+export const Header: React.FC<{ authenticated?: boolean; links: { href: string; text: string }[] }> = (
+  props = { authenticated: false, links: [] }
+) => (
+  <nav className="mx-auto flex max-w-7xl flex-col space-y-5 py-6 px-10 lg:flex-row lg:space-y-0">
     <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/examples/auth" className="lg:ml-10">Overview</HeaderLink>
-    <HeaderLink href="/examples/auth/client-side-protected" className="lg:ml-10">
-      Protected (client-side)
-    </HeaderLink>
-    <HeaderLink href="/examples/auth/server-side-protected" className="lg:ml-10">
-      Protected (server-side)
-    </HeaderLink>
-    <HeaderLink href="/examples/auth/middleware-protected" className="lg:ml-10">
-      Protected (middleware)
-    </HeaderLink>
+    {props.links.map((link) => (
+      <HeaderLink key={link.href} href={link.href} className="lg:ml-10">
+        {link.text}
+      </HeaderLink>
+    ))}
     {props.authenticated ? (
       <HeaderLink href="/api/auth/signout" className="lg:ml-auto">
         Sign out

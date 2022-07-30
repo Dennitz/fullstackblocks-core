@@ -13,6 +13,7 @@ datasource db {
 
 model Example {
     id String @id @default(cuid())
+    message String
 }
 
 // Necessary for Next auth

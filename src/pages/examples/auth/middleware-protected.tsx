@@ -1,12 +1,12 @@
 import { NextPage } from "next";
-import { Header } from "@/components/examples/auth/header";
+import { AuthHeader } from "@/components/examples/auth/auth-header";
 import { useSession } from "next-auth/react";
 
 const MiddlewareProtected: NextPage = () => {
   const { data: session } = useSession();
   return (
     <div>
-      <Header authenticated />
+      <AuthHeader authenticated />
       <main className="mx-auto max-w-7xl py-6 px-10">
         <h1 className="mb-10 text-3xl font-extrabold text-slate-800">Middleware protected page</h1>
         <div className="mb-10 max-w-3xl rounded-xl bg-white shadow-xl">
