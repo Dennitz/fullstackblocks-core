@@ -23,6 +23,7 @@ test("should render the index page", async ({ page }) => {
   {
     title: "tRPC",
     documentationUrl: "https://trpc.io/",
+    exampleUrl: "/examples/trpc",
   },
   {
     title: "NextAuth.js",
