@@ -3,7 +3,6 @@ import * as trpcNext from "@trpc/server/adapters/next";
 import { unstable_getServerSession as getServerSession, Session } from "next-auth";
 
 import { authOptions as nextAuthOptions } from "../../pages/api/auth/[...nextauth]";
-import { prisma } from "../db/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import { MiddlewareFunction } from "@trpc/server/src/internals/middlewares";
 
@@ -11,7 +10,6 @@ export interface Context {
   req: NextApiRequest | undefined;
   res: NextApiResponse | undefined;
   session: Session | null | undefined;
-  prisma: typeof prisma;
 }
 
 export type ProtectedContext = Context & { session: Session };
@@ -29,7 +27,6 @@ export async function createContext(opts?: trpcNext.CreateNextContextOptions): P
     req,
     res,
     session,
-    prisma,
   };
 }
 
