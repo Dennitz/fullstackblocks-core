@@ -1,6 +1,9 @@
 import { Page, expect } from "@playwright/test";
-import { BasePage } from "../../../helpers/base-page";
-import { getSignInMagicLinkFromEmail } from "@e2e/helpers/email";
+import { BasePage } from "@e2e/helpers/base-page";
+import { simpleParser } from "mailparser";
+import { JSDOM } from "jsdom";
+import { Mailhog } from "@e2e/helpers/mailhog";
+
 
 export class SigninPage extends BasePage {
   static readonly path: string = "/api/auth/signin";
@@ -29,4 +32,23 @@ export class SigninPage extends BasePage {
     const signInLink = await getSignInMagicLinkFromEmail(email);
     await this.page.goto(signInLink);
   }
+}
+
+async function getSignInMagicLinkFromEmail(emailAddress: string): Promise<string> {
+  const mailhog = await Mailhog.init();
+  const searchResult = await mailhog.search({ kind: "to", query: emailAddress });
+  const messagesByCreatedDateDesc = searchResult.items.sort(
+    (a, b) => new Date(b.Created).getTime() - new Date(a.Created).getTime()
+  );
+  const rawMessage = messagesByCreatedDateDesc[0]?.Raw.Data;
+  const parsed = await simpleParser(rawMessage);
+
+  const { document } = new JSDOM(parsed.textAsHtml).window;
+  const link = document.querySelector("a")?.href;
+
+  if (link) {
+    return link;
+  }
+
+  throw new Error("Magic link not found");
 }
