@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { BasePage } from "@e2e/helpers/base-page";
+import { BasePage } from "@e2e/pages/base-page";
 import { simpleParser } from "mailparser";
 import { JSDOM } from "jsdom";
 import { Mailhog } from "@e2e/helpers/mailhog";

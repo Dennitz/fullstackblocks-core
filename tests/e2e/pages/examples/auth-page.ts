@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { BasePage } from "@e2e/helpers/base-page";
+import { BasePage } from "@e2e/pages/base-page";
 
 export class AuthPage extends BasePage {
   static readonly path: string = "/examples/auth";

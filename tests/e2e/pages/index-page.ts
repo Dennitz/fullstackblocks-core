@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { BasePage } from "../helpers/base-page";
+import { BasePage } from "./base-page";
 
 export class IndexPage extends BasePage {
   static readonly path: string = "/";

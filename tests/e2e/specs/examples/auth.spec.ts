@@ -1,7 +1,7 @@
 import { test, expect } from "@e2e/test";
 import { Page } from "@playwright/test";
 import { SigninPage } from "@e2e/pages/api/auth/signin-page";
-import { BasePage } from "@e2e/helpers/base-page";
+import { BasePage } from "@e2e/pages/base-page";
 import { faker } from "@faker-js/faker";
 import { AuthPage } from "@e2e/pages/examples/auth-page";
 import { SignoutPage } from "@e2e/pages/api/auth/signout-page";
