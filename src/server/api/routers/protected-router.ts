@@ -1,6 +1,6 @@
 import { createRouter, protect } from "../context";
 
-export const partiallyProtectedRouter = createRouter()
+export const protectedRouter = createRouter()
   .query("getPublicMessage", {
     resolve() {
       return "You may or may not be logged in. Everyone can see this public message.";
@@ -9,6 +9,6 @@ export const partiallyProtectedRouter = createRouter()
   .middleware(protect)
   .query("getSecretMessage", {
     resolve({ ctx }) {
-      return `You are logged in and can see this secret message!. Your session expires at ${ctx.session.expires}`;
+      return `You are logged in and can see this secret message!. Your email is ${ctx.session.user?.email}`;
     },
   });
