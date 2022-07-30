@@ -19,17 +19,15 @@ const Trpc: NextPage = () => {
             Click the links at the top of the page, for examples of a basic query, a query that requires
             authentication and a more comprehensive example with query and mutation combined.
           </p>
-          <p className="mb-3">
-            Make sure to also check out the related source code:
-          </p>
-            <ul className="ml-7 mb-3 list-disc">
-              <li className="mb-1">
-                  The <code>/src/pages/examples/trpc/</code> directory for the React pages
-              </li>
-              <li className="mb-1">
-                The <code>/src/server/api/routers/</code> directory for tRPC router definitions
-              </li>
-            </ul>
+          <p className="mb-3">Make sure to also check out the related source code:</p>
+          <ul className="ml-7 mb-3 list-disc">
+            <li className="mb-1">
+              The <code>/src/pages/examples/trpc/</code> directory for the React pages
+            </li>
+            <li className="mb-1">
+              The <code>/src/server/api/routers/</code> directory for tRPC router definitions
+            </li>
+          </ul>
         </div>
       </main>
     </div>

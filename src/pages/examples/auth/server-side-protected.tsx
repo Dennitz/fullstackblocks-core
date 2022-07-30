@@ -10,7 +10,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!session) {
     return {
       redirect: {
-        destination: `/api/auth/signin?callbackUrl=${encodeURIComponent("/examples/auth/server-side-protected")}`,
+        destination: `/api/auth/signin?callbackUrl=${encodeURIComponent(
+          "/examples/auth/server-side-protected"
+        )}`,
         permanent: false,
       },
     };

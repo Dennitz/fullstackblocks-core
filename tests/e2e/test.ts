@@ -93,7 +93,7 @@ export const test = base.extend<Fixtures>({
     const headers = { Cookie: cookieHeader };
     const authenticatedClient = createTrpcClient(baseURL, headers);
 
-    const unauthenticatedClient = createTrpcClient(baseURL)
+    const unauthenticatedClient = createTrpcClient(baseURL);
 
     await use({
       client: unauthenticatedClient,

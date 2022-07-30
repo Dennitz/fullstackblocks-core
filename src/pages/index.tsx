@@ -30,7 +30,7 @@ const stackComponents: {
     title: "tRPC",
     description: "End-to-end typesafe APIs made easy",
     documentationUrl: "https://trpc.io/",
-    exampleUrl: "/examples/trpc"
+    exampleUrl: "/examples/trpc",
   },
   {
     title: "NextAuth.js",

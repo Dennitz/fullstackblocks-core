@@ -15,7 +15,7 @@ test.describe("/examples/auth page", () => {
   });
 
   test("should allow navigation to sign-out page if signed in", async ({ authenticated }) => {
-    const {page} = authenticated
+    const { page } = authenticated;
     const authPage = new AuthPage(page);
     await authPage.goto();
     await authPage.clickSignOut();
@@ -23,18 +23,18 @@ test.describe("/examples/auth page", () => {
   });
 
   [
-    {text: 'Protected (client-side)', expectedPath: '/examples/auth/client-side-protected'},
-    {text: 'Protected (server-side)', expectedPath: '/examples/auth/server-side-protected'},
-    {text: 'Protected (middleware)', expectedPath: '/examples/auth/middleware-protected'},
-  ].forEach(({text, expectedPath}) =>
+    { text: "Protected (client-side)", expectedPath: "/examples/auth/client-side-protected" },
+    { text: "Protected (server-side)", expectedPath: "/examples/auth/server-side-protected" },
+    { text: "Protected (middleware)", expectedPath: "/examples/auth/middleware-protected" },
+  ].forEach(({ text, expectedPath }) =>
     test(`should allow navigation to ${expectedPath} if signed in`, async ({ authenticated }) => {
-      const {page} = authenticated
+      const { page } = authenticated;
       const authPage = new AuthPage(page);
       await authPage.goto();
-      await page.locator(`text=${text}`).click()
+      await page.locator(`text=${text}`).click();
       await expect(page).toHaveURL(expectedPath);
     })
-  )
+  );
 });
 
 test.describe("Authentication flows", () => {
@@ -62,7 +62,7 @@ test.describe("Authentication flows", () => {
   });
 
   test("should allow sign-out if signed in", async ({ authenticated }) => {
-    const {page} = authenticated
+    const { page } = authenticated;
 
     // Signed-in initially, so it should be possible to access a protected page
     const protectedPage = new ProtectedPage(page);
@@ -70,7 +70,7 @@ test.describe("Authentication flows", () => {
     await protectedPage.expectContentToBeVisible();
 
     // Sign out
-    await new SignoutPage(page).signOut()
+    await new SignoutPage(page).signOut();
 
     // Now it should not be possible anymore to access the protected page. Trying to access the page
     // should redirect to sign-in page

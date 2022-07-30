@@ -24,9 +24,7 @@ const QueryPublic: NextPage = () => {
           {authStatus === "authenticated" && (
             <>
               You are currently signed in. You can{" "}
-              <Link
-                href={`/api/auth/signout?callbackUrl=${encodeURIComponent(window.location.pathname)}`}
-              >
+              <Link href={`/api/auth/signout?callbackUrl=${encodeURIComponent(window.location.pathname)}`}>
                 <a className="cursor-pointer text-violet-500">sign out</a>
               </Link>{" "}
               and you will still see the same message.
@@ -35,9 +33,7 @@ const QueryPublic: NextPage = () => {
           {authStatus === "unauthenticated" && (
             <>
               You are not signed in. You can{" "}
-              <Link
-                href={`/api/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`}
-              >
+              <Link href={`/api/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`}>
                 <a className="cursor-pointer text-violet-500">sign in</a>
               </Link>{" "}
               and you will still see the same message.

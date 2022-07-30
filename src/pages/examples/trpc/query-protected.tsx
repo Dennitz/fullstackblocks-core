@@ -34,9 +34,7 @@ const QueryProtected: NextPage = () => {
           {authStatus === "authenticated" && (
             <>
               You are currently signed in. You can{" "}
-              <Link
-                href={`/api/auth/signout?callbackUrl=${encodeURIComponent(window.location.pathname)}`}
-              >
+              <Link href={`/api/auth/signout?callbackUrl=${encodeURIComponent(window.location.pathname)}`}>
                 <a className="cursor-pointer text-violet-500">sign out</a>
               </Link>{" "}
               to see an error returned by the tRPC query.
@@ -45,9 +43,7 @@ const QueryProtected: NextPage = () => {
           {authStatus === "unauthenticated" && (
             <>
               You are not signed in. To see data returned by the tRPC query,{" "}
-              <Link
-                href={`/api/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`}
-              >
+              <Link href={`/api/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`}>
                 <a className="cursor-pointer text-violet-500">sign in</a>
               </Link>{" "}
               first.

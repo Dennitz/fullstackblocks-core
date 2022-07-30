@@ -4,7 +4,6 @@ import { simpleParser } from "mailparser";
 import { JSDOM } from "jsdom";
 import { Mailhog } from "@e2e/helpers/mailhog";
 
-
 export class SigninPage extends BasePage {
   static readonly path: string = "/api/auth/signin";
 
