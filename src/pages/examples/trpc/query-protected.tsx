@@ -27,7 +27,7 @@ const QueryProtected: NextPage = () => {
       <TrpcHeader authenticated={authStatus === "authenticated"} />
       <main className="mx-auto max-w-7xl py-6 px-10">
         <h1 className="mb-10 text-3xl font-extrabold text-slate-800">tRPC Query - Authentication required</h1>
-        <div className="max-w-3xl rounded-xl bg-white shadow-xl">
+        <div className="max-w-3xl rounded-xl bg-white shadow-md">
           <div className="px-4 py-4 text-lg  text-slate-900 sm:px-6 lg:px-4 xl:px-6">{message}</div>
         </div>
         <div className="mt-8">

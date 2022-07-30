@@ -9,7 +9,7 @@ const MiddlewareProtected: NextPage = () => {
       <AuthHeader authenticated />
       <main className="mx-auto max-w-7xl py-6 px-10">
         <h1 className="mb-10 text-3xl font-extrabold text-slate-800">Middleware protected page</h1>
-        <div className="mb-10 max-w-3xl rounded-xl bg-white shadow-xl">
+        <div className="mb-10 max-w-3xl rounded-xl bg-white shadow-md">
           <h2 className="px-4 pt-4 text-lg font-semibold text-slate-900 sm:px-6 lg:px-4 xl:px-6">
             Some protected data
           </h2>
