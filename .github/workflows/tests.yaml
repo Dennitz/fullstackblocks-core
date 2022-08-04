@@ -10,12 +10,16 @@ on:
 
 jobs:
   test-e2e:
-    name: Run E2E tests
+    name: Run E2E tests (${{ matrix.project }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [ "Desktop Chrome", "Mobile Chrome", "Mobile Safari" ]
     services:
       mailhog:
         image: mailhog/mailhog:latest
-        ports: ["1025:1025", "8025:8025"]
+        ports: [ "1025:1025", "8025:8025" ]
 
     steps:
       - uses: actions/checkout@v3
@@ -30,7 +34,7 @@ jobs:
       - name: Set up database
         run: npx prisma db push
       - name: Run tests
-        run: npm run test:e2e
+        run: npm run test:e2e -- --project="${{ matrix.project }}"
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v3
