@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [ "Desktop Chrome", "Mobile Chrome", "Mobile Safari" ]
+        project: [ "Desktop Chrome", "Mobile Chrome"]
     services:
       mailhog:
         image: mailhog/mailhog:latest
