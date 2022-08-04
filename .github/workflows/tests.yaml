@@ -34,7 +34,7 @@ jobs:
       - name: Set up database
         run: npx prisma db push
       - name: Run tests
-        run: npm run test:e2e -- --project="${{ matrix.project }}"
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- npm run test:e2e -- --project="${{ matrix.project }}"
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v3
