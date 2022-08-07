@@ -25,7 +25,7 @@ const Auth: NextPage = () => {
           <ul className="ml-7 mb-3 list-disc">
             <li className="mb-1">
               <a
-                className="cursor-pointer text-violet-500"
+                className="cursor-pointer text-indigo-600"
                 href="https://next-auth.js.org/tutorials/securing-pages-and-api-routes"
                 target="_blank"
                 rel="noreferrer"
@@ -35,7 +35,7 @@ const Auth: NextPage = () => {
             </li>
             <li>
               <a
-                className="cursor-pointer text-violet-500"
+                className="cursor-pointer text-indigo-600"
                 href="https://nextjs.org/docs/authentication"
                 target="_blank"
                 rel="noreferrer"
