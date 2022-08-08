@@ -61,7 +61,7 @@ const Index: NextPage = () => (
       >
         Documentation
       </a>
-      <p className="mb-3 font-semibold text-2xl text-slate-700">Technologies of this stack</p>
+      <p className="mb-3 text-2xl font-semibold text-slate-700">Technologies of this stack</p>
       <div className="grid w-full grid-cols-1 grid-rows-3 items-center justify-center gap-3 pt-3 md:w-full md:grid-cols-2 md:grid-rows-2 lg:w-2/3 lg:grid-cols-2 lg:grid-rows-2">
         {stackComponents.map((details) => (
           <div
