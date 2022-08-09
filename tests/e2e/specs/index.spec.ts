@@ -4,7 +4,7 @@ import { IndexPage } from "../pages/index-page";
 test("should render the index page", async ({ page }) => {
   const indexPage = new IndexPage(page);
   await indexPage.goto();
-  await expect(page.locator("h1")).toContainText("Create T3 App");
+  await expect(page.locator("h1")).toContainText("Full Stack Blocks");
 });
 
 [
