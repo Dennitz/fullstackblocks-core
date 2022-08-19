@@ -1,4 +1,4 @@
-# Full Stack Blocks - Starter Kit
+# Full Stack Blocks - Next.js Starter Kit
 
 Full-stack starter kit built on top the [T3 stack](https://github.com/t3-oss/create-t3-app).
 
