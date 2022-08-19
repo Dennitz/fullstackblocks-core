@@ -86,19 +86,35 @@ Make sure you have Docker running.
 
 ### Start the development server
 
+Make sure you have [started the development dependencies](#start-development-dependencies).
+
 ```
 npm run dev
 ```
 
+### Run end-to-end tests
+
 Make sure you have [started the development dependencies](#start-development-dependencies).
 
-### Run end-to-end tests
+#### Run all tests
 
 ```
 npm run test:e2e
 ```
 
-Make sure you have [started the development dependencies](#start-development-dependencies).
+#### Run a specific test file
+
+```
+npm run test:e2e -- specs/api/trpc/protected.spec.ts
+```
+
+#### Use a specific Playwright project
+
+By default, Playwright runs tests on all defined projects (e.g. `Desktop Chrome` and `Mobile Chrome`) in parallel. You can choose to run on just a single project with:
+
+```
+npm run test:e2e -- --project 'Desktop Chrome'
+```
 
 ### Run linter
 
